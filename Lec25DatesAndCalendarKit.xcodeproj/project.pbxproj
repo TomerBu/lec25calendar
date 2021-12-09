@@ -15,6 +15,9 @@
 		D5697B5927625BAA0003E8D9 /* Lec25DatesAndCalendarKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5697B5727625BAA0003E8D9 /* Lec25DatesAndCalendarKit.xcdatamodeld */; };
 		D5697B5B27625BAE0003E8D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5697B5A27625BAE0003E8D9 /* Assets.xcassets */; };
 		D5697B5E27625BAE0003E8D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5697B5C27625BAE0003E8D9 /* LaunchScreen.storyboard */; };
+		D5697B6727626E520003E8D9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697B6627626E520003E8D9 /* DateHelper.swift */; };
+		D5697B6A27627F620003E8D9 /* CalendarKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697B6927627F610003E8D9 /* CalendarKitViewController.swift */; };
+		D5697B6D276283B70003E8D9 /* EKWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5697B6C276283B70003E8D9 /* EKWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		D5697B5A27625BAE0003E8D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5697B5D27625BAE0003E8D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5697B5F27625BAE0003E8D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5697B6627626E520003E8D9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		D5697B6927627F610003E8D9 /* CalendarKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarKitViewController.swift; sourceTree = "<group>"; };
+		D5697B6C276283B70003E8D9 /* EKWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKWrapper.swift; sourceTree = "<group>"; };
 		E0773EA8375DA20C7ED02831 /* Pods_Lec25DatesAndCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lec25DatesAndCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,7 +56,6 @@
 				A0617F21F6AAD3BBDF999C62 /* Pods-Lec25DatesAndCalendarKit.debug.xcconfig */,
 				C140C26A5C68A5FEFCA55E57 /* Pods-Lec25DatesAndCalendarKit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +80,9 @@
 		D5697B4D27625BAA0003E8D9 /* Lec25DatesAndCalendarKit */ = {
 			isa = PBXGroup;
 			children = (
+				D5697B6B276283A40003E8D9 /* Models */,
+				D5697B6827627F3F0003E8D9 /* Controllers */,
+				D5697B6527626E400003E8D9 /* DateHelper */,
 				D5697B4E27625BAA0003E8D9 /* AppDelegate.swift */,
 				D5697B5027625BAA0003E8D9 /* SceneDelegate.swift */,
 				D5697B5227625BAA0003E8D9 /* ViewController.swift */,
@@ -85,6 +93,30 @@
 				D5697B5727625BAA0003E8D9 /* Lec25DatesAndCalendarKit.xcdatamodeld */,
 			);
 			path = Lec25DatesAndCalendarKit;
+			sourceTree = "<group>";
+		};
+		D5697B6527626E400003E8D9 /* DateHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D5697B6627626E520003E8D9 /* DateHelper.swift */,
+			);
+			path = DateHelper;
+			sourceTree = "<group>";
+		};
+		D5697B6827627F3F0003E8D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5697B6927627F610003E8D9 /* CalendarKitViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5697B6B276283A40003E8D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5697B6C276283B70003E8D9 /* EKWrapper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E3D7C82CBC04B1C49910067B /* Frameworks */ = {
@@ -210,10 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5697B6727626E520003E8D9 /* DateHelper.swift in Sources */,
+				D5697B6A27627F620003E8D9 /* CalendarKitViewController.swift in Sources */,
 				D5697B5327625BAA0003E8D9 /* ViewController.swift in Sources */,
 				D5697B4F27625BAA0003E8D9 /* AppDelegate.swift in Sources */,
 				D5697B5927625BAA0003E8D9 /* Lec25DatesAndCalendarKit.xcdatamodeld in Sources */,
 				D5697B5127625BAA0003E8D9 /* SceneDelegate.swift in Sources */,
+				D5697B6D276283B70003E8D9 /* EKWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
