@@ -127,10 +127,27 @@ class CalendarKitViewController: DayViewController{
         //if we are editing an event - the event is cloned and it has an edited event prop.
         if let originalEvent = editingEvent.editedEvent{
             event.commitEditing()
-            try? eventStore.save(editingEvent.ekEvent, span: .thisEvent)
+            
+            if originalEvent === editingEvent{
+                //edit before save:
+                presentEditingViewForEvent(ekEvent: editingEvent.ekEvent)
+            }else{
+                try? eventStore.save(editingEvent.ekEvent, span: .thisEvent)
+            }
         }
         
         reloadData()
+    }
+    
+    func presentEditingViewForEvent(ekEvent: EKEvent){
+        let editingViewController = EKEventEditViewController()
+        
+        editingViewController.event = ekEvent
+        editingViewController.eventStore = eventStore
+        editingViewController.editViewDelegate = self //conform
+        
+        
+        present(editingViewController, animated: true)
     }
     
     override func dayView(dayView: DayView, didTapTimelineAt date: Date) {
@@ -163,3 +180,12 @@ class CalendarKitViewController: DayViewController{
 }
 
 
+extension CalendarKitViewController: EKEventEditViewDelegate{
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        endEventEditing()
+        reloadData()
+        controller.dismiss(animated: true)
+    }
+    
+    
+}
